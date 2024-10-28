@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.exerciciossb.models.Cliente;
+import com.example.exerciciossb.model.Cliente;
 
 @RestController
 @RequestMapping("/clientes") //podemos omitir o "path="

@@ -1,4 +1,4 @@
-package com.example.exerciciossb.models;
+package com.example.exerciciossb.model;
 
 public class Cliente {
 	
