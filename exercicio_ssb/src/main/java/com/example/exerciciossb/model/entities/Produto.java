@@ -20,11 +20,6 @@ public class Produto {
 	private String nome;
 	
 	
-	@Autowired
-	@Transient
-	public ProdutoRepository repository;
-	
-	
 	public Produto() {
 		
 	}
