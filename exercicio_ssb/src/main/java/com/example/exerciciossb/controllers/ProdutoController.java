@@ -19,13 +19,7 @@ public class ProdutoController {
 	private ProdutoRepository produtoRepository;
 
 	@PostMapping
-	public @ResponseBody Produto novoProduto(
-			@RequestParam String nome,
-			@RequestParam double preco,
-			@RequestParam double desconto) {
-	
-		Produto produto = new Produto(nome, preco, desconto);
-		
+	public @ResponseBody Produto novoProduto(Produto produto) {	
 		//perciste o produto no mysql e o id retorna de forma correta
 		produtoRepository.save(produto);
 		return produto;
