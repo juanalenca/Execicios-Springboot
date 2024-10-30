@@ -4,6 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.exerciciossb.model.repositories.ProdutoRepository;
 
 @Entity
 public class Produto {
@@ -13,6 +18,11 @@ public class Produto {
 	private int id;
 	
 	private String nome;
+	
+	
+	@Autowired
+	@Transient
+	public ProdutoRepository repository;
 	
 	
 	public Produto() {
