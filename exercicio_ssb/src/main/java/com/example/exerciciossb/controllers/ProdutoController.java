@@ -1,5 +1,7 @@
 package com.example.exerciciossb.controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,8 @@ public class ProdutoController {
 	private ProdutoRepository produtoRepository;
 
 	@PostMapping
-	public @ResponseBody Produto novoProduto(Produto produto) {	
+	public @ResponseBody Produto novoProduto(@Valid Produto produto) {	
+		
 		//perciste o produto no mysql e o id retorna de forma correta
 		produtoRepository.save(produto);
 		return produto;
