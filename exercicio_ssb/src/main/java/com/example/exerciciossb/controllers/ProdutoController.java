@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,8 +25,8 @@ public class ProdutoController {
 	@Autowired
 	private ProdutoRepository produtoRepository;
 
-	@PostMapping
-	public @ResponseBody Produto novoProduto(@Valid Produto produto) {	
+	@RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
+	public @ResponseBody Produto salvarProduto(@Valid Produto produto) {	
 		
 		//perciste o produto no mysql e o id retorna de forma correta
 		produtoRepository.save(produto);
@@ -43,10 +44,10 @@ public class ProdutoController {
 		return produtoRepository.findById(id);
 	}
 	
-	@PutMapping
-	public Produto alterarProduto(@Valid Produto produto) {
-		produtoRepository.save(produto);
-		return produto;
-	}
+//	@PutMapping
+//	public Produto alterarProduto(@Valid Produto produto) {
+//		produtoRepository.save(produto);
+//		return produto;
+//	}
 	
 }
